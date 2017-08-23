@@ -1,0 +1,32 @@
+{
+  "songs": [
+    {
+      "id": 0,
+      "name": "These days",
+      "artist": "Bon Jovi",
+      "song": "music/Bon-Jovi-these-days.mp3",
+      "img": "img/bon-jovi-these-days-album.jpg"
+    },
+    {
+      "id": 1,
+      "name": "It's gotta be you",
+      "artist": "Backstreet Boys",
+      "song": "music/Backstreet-Boys-its-gotta-be-you.mp3",
+      "img": "img/bsb-millennium-album.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Strong",
+      "artist": "Cher",
+      "song": "music/Cher-strong-enough.mp3",
+      "img": "img/cher-strong-enough-album.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ray of light",
+      "artist": "Madonna",
+      "song": "music/Madonna-ray-of-light.mp3",
+      "img": "img/madonna-ray-of-light-album.jpg"
+    }
+  ]
+}
