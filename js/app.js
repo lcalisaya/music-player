@@ -13,7 +13,7 @@ function getSongs(){
 };
 
 function genList(music) {
-  console.log(music.songs);
+  //console.log(music.songs);
   $.each(music.songs, function(i, song){
     $('#playlist').append('<li class="songs-li" id="' + i + '">' + song.name + '</li>');
   }); //It adds for each song a li tag
@@ -26,7 +26,22 @@ function genList(music) {
 
 function playSong(id){
   console.log(id);
-  $('#img-album').attr('src', music.songs[id].img);
-  $('#player').attr('src', music.songs[id].song);
-  audio.play(); //this method belongs to the audio api, and it allows reproduce the song automatically
+  var upperBound = music.songs;
+  if (id >= upperBound.length){ //when it was reached the last song the audio puts on in pause
+    console.log('Se acabó la canción');
+    audio.pause();
+  } else {
+    $('#img-album').attr('src', music.songs[id].img);
+    $('#player').attr('src', music.songs[id].song);
+    audio.play(); //this method belongs to the audio api, and it allows reproduce the song automatically
+    console.log('Hay más canciones');
+    scheduleSong(id);
+  }
+};
+
+function scheduleSong(id){
+  audio.onended = function () { //at the moment of ended a song, it'll be reproduced the next song 
+    console.log('Terminó la canción');
+    playSong(parseInt(id)+1);
+  }
 };
